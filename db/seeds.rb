@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+=begin
 20.times do |n|
   name = Faker::Company.name
   address = Faker::Address.street_name
@@ -15,3 +16,16 @@
                 description: description,
                 user_id: 1)
 end
+
+=end
+200.times do |n|
+  
+  comment = Faker::Lorem.sentence(5)
+  user_id = rand(1..3)
+  place_id = rand(1..88)
+
+  Comment.create!(comment: comment, 
+                user_id: user_id,
+                place_id: place_id)
+end
+
